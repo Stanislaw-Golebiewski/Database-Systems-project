@@ -2,12 +2,15 @@
 <html>
 <head>
   <title>DuczBase</title>
-
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">/-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   <link rel="stylesheet" type="text/css" href="style_main.css">
+  <script>
+    function show_content(field)
+    {
+      var table_code = "<table><tr><th>product</th><th>location</th></tr>"
+      var right_box_handler = document.getElementById("right_box");//znajdujemy prawegi diva po jego id, w tym wypadku "right box"
+      right_box_handler.innerHTML = table_code+"<tr><td>"+String(field.attributes['name'].value)+"<td><td>"+String(field.attributes['name'].value)+"</td></tr></table>";
+    }
+  </script>
 </head>
 <body>
   <div>
@@ -19,16 +22,37 @@
       <li><a class="active" href="packer_shipments.html">Your shipments</a></li>
       <li><a href="packer_workers.html">Co-workers</a></li>
     </ul>
-    <dev id="display_element">Shipment 1</dev>
-    <dev id="display_element">Shipment 2</dev>
-    <dev id="display_element">Shipment 3</dev>
+    <div id="left_box">
+      <dev id="display_element" name='1' onclick="show_content(this)">Shipment 1</dev><br>
+      <dev id="display_element" name='2' onclick="show_content(this)">Shipment 2</dev>
+      <dev id="display_element" name='3' onclick="show_content(this)">Shipment 3</dev>
+    </div>
 
-      <button class="button" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
-  <div id="demo" class="collapse">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </div>
+    <div id="right_box">
+      <h2>SHIPMENT 1</h2>
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Location</th>
+        </tr>
+        <tr>
+          <td>Prostownica do bananow</td>
+          <td>23</td>
+          <td>DSI231</td>
+        </tr>
+        <tr>
+          <td>Prostownica do bananow</td>
+          <td>23</td>
+          <td>DSI231</td>
+        </tr>
+        <tr>
+          <td>Prostownica do bananow</td>
+          <td>23</td>
+          <td>DSI231</td>
+        </tr>
+      </table>
+    </div>
 
   </div>
 </body>
