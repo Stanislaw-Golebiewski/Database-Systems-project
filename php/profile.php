@@ -1,5 +1,8 @@
 <?php
 session_start();
+if($_SESSION["user_role"] == "PACKER"){
+	header("location: ../pages/packer_shipments.php");
+}
 ?>
 <!DOCTYPE HTML>
 <html>
