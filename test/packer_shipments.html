@@ -7,6 +7,22 @@
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   -->
+  <style>
+  table
+  {
+    border: 1px solid black;
+    width: 100%;
+  }
+  </style>
+  <script>
+    function show_content(field)
+    {
+      var table_code = "<table><tr><th>product</th><th>location</th></tr>"
+      var x = document.getElementById("right_box");
+      console.log(field.attributes['name'].value);
+      x.innerHTML = table_code+"<tr><td>product<td><td>"+String(field.attributes['name'].value)+"</td></tr></table>";
+    }
+  </script>
 
   <link rel="stylesheet" type="text/css" href="style_main.css">
 </head>
@@ -16,17 +32,13 @@
     <div id="logo_big">DuczBase</div>
   </div>
   <div id="main_box">
-    <ul>
-      <li><a class="active" href="packer_shipments.html">Your shipments</a></li>
-      <li><a href="packer_workers.html">Co-workers</a></li>
-    </ul>
     <div style="width: 50%; float:left">
-      <dev id="display_element">Shipment 1</dev>
-      <dev id="display_element">Shipment 2</dev>
-      <dev id="display_element">Shipment 3</dev>
+      <dev id="display_element" name='1' onclick="show_content(this)">Shipment 1</dev>
+      <dev id="display_element" name='2' onclick="show_content(this)">Shipment 2</dev>
+      <dev id="display_element" name='3' onclick="show_content(this)">Shipment 3</dev>
     </div>
 
-    <div style="width: 50%; float:right">
+    <div id="right_box" style="width: 50%; float:right">
       #right content in there
     </div>
 

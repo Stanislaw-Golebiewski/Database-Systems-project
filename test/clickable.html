@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>DuczBase</title>
+  <script>
+    function show_content(field)
+    {
+      var table_code = "<table><tr><th>product</th><th>location</th></tr>"
+      var right_box_handler = document.getElementById("right_box");//znajdujemy prawegi diva po jego id, w tym wypadku "right box"
+      right_box_handler.innerHTML = table_code+"<tr><td>"+String(field.attributes['name'].value)+"<td><td>"+String(field.attributes['name'].value)+"</td></tr></table>";
+    }
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="style_main.css">
+</head>
+<body>
+  <div>
+    <h1>Spock, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
+    <div id="logo_big">DuczBase</div>
+  </div>
+  <div id="main_box">
+    <div style="width: 50%; float:left">
+      <dev id="display_element" name='1' onclick="show_content(this)">Shipment 1</dev><!-- Musi byc name i onclick! -->
+      <dev id="display_element" name='2' onclick="show_content(this)">Shipment 2</dev>
+      <dev id="display_element" name='3' onclick="show_content(this)">Shipment 3</dev>
+    </div>
+
+    <div id="right_box" style="width: 50%; float:right"> <!-- musi byc jakies id -->
+      #right content in there
+    </div>
+
+  </div>
+</body>
+</html>
