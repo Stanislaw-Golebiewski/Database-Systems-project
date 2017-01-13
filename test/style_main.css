@@ -1,0 +1,185 @@
+    body{
+      background-color: #d4801c;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      margin-bottom: 10px;
+	}
+
+	li {
+      float: left;
+	}
+
+	li a {
+      display: block;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+
+      font-family: verdana;
+      color: white;
+      font-size: 160%;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 20px;
+	}
+
+	li a:hover {
+      text-decoration: underline;
+	}
+
+	.active {
+      background-color: #6b3a00;
+	}
+
+    #logo_box {
+      position: absolute;
+      width: 413px;
+      height: 239px;
+      top: 50%;
+      left: 50%;
+      margin-left: -15%;
+      margin-top: -15%;
+    }
+
+    #login_box {
+      border-radius: 5px;
+      background-color: #914f00;
+      padding: 20px;
+    }
+
+    #logo_big {
+      padding: 20px;
+      color: white;
+      font-family: Impact;
+      font-size: 500%;
+      text-align: center;
+    }
+
+    #main_box {
+      width: 50%;
+      border-radius: 5px;
+      background-color: #914f00;
+      padding: 20px;
+      position: absolute;
+      left: 50%;
+      margin-left: -25%;
+      margin-top: 30px;
+    }
+
+    #display_element {
+      width: 40%;
+      padding: 14px 20px;
+      float: left;
+      font-family: verdana;
+      color: white;
+      font-size: 100%;
+    }
+
+    #display_element:hover {
+      font-weight: bold;
+    }
+
+    h1 {
+      font-family: verdana;
+      color: white;
+      font-size: 150%;
+      font-weight: normal;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: -40px;
+    }
+
+    h2 {
+
+    }
+
+    #shipment {
+      width: 50%;
+      padding: 3px;
+      font-family: verdana;
+      font-size: 100%;
+      color: white;
+    }
+    
+    #error {
+      color: white;
+      text-align: center;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background-color: #6b3a00;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #d4801c; //#e39c48;
+    }
+
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+
+
+
+    .collapse {
+  display: none;
+}
+.collapse.in {
+  display: block;
+}
+tr.collapse.in {
+  display: table-row;
+}
+tbody.collapse.in {
+  display: table-row-group;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-timing-function: ease;
+       -o-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-duration: .35s;
+       -o-transition-duration: .35s;
+          transition-duration: .35s;
+  -webkit-transition-property: height, visibility;
+       -o-transition-property: height, visibility;
+          transition-property: height, visibility;
+}
+
+.button {
+    background-color: #914f00;
+    border: none;
+    padding: 14px 20px;
+    color: white;
+    font-family: verdana;
+    font-size: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.button:hover {
+  font-weight: bold;
+}

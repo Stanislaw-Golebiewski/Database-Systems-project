@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     //****************
     $host = "localhost";
     $user = "postgres";
-    $pass = "koty";
+    $pass = "lubiekoty";
     $db   = "shop";
     //****************
     //Connect to postgres database
