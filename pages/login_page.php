@@ -20,7 +20,7 @@
       <input type="text" name="username" placeholder="username"><br>
       <input type="password" name="password" placeholder="*********"><br>
       <input type="submit" name="submit" value=" LoginTej "><br>
-      <div id="error"> <?php echo $error; ?> </div>
+      <div id="message"> <?php echo $error; ?> </div>
     </form>
   </div>
 </div>

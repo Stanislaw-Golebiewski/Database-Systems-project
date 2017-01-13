@@ -3,20 +3,66 @@
 <head>
   <title>DuczBase</title>
   <link rel="stylesheet" type="text/css" href="style_main.css">
+  <script>    //TĘ FUNKCJĘ TRZEBA ZMIENIĆ!!!
+    function show_content(field)
+    {
+      var table_code = "<table><tr><th>product</th><th>location</th></tr>"
+      var right_box_handler = document.getElementById("right_box");//znajdujemy prawegi diva po jego id, w tym wypadku "right box"
+      right_box_handler.innerHTML = table_code+"<tr><td>"+String(field.attributes['name'].value)+"<td><td>"+String(field.attributes['name'].value)+"</td></tr></table>";
+    }
+  </script>
 </head>
 <body>
+
+  <form>
+    <div id="logout">Log out</div>
+  </form>
+
   <div>
     <h1>Spock, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
     <div id="logo_big">DuczBase</div>
   </div>
+
   <div id="main_box">
+  
     <ul>
       <li><a href="packer_shipments.html">Your shipments</a></li>
       <li><a class="active" href="packer_workers.html">Co-workers</a></li>
     </ul>
-    <dev id="display_element">Shipment 1</dev>
-    <dev id="display_element">Shipment 2</dev>
-    <dev id="display_element">Shipment 3</dev>
+
+    <div id="left_box">
+      <dev id="display_element" name='1' onclick="show_content(this)">Shipment 1</dev><br>
+      <dev id="display_element" name='2' onclick="show_content(this)">Shipment 2</dev>
+      <dev id="display_element" name='3' onclick="show_content(this)">Shipment 3</dev>
+    </div>
+
+    <div id="right_box">
+      <h2>SHIPMENT 1</h2>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Sector</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Grazyna</td>
+          <td>D</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Grazyna</td>
+          <td>D</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Grazyna</td>
+          <td>D</td>
+        </tr>
+      </table>
+    </div>
+
   </div>
+
 </body>
 </html>

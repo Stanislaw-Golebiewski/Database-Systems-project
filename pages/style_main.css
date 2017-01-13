@@ -37,11 +37,9 @@ li a:hover {
 
 #logo_box {
   position: absolute;
-  width: 413px;
-  height: 239px;
-  top: 50%;
-  left: 50%;
-  margin-left: -15%;
+  width: 30%;
+  top: 48%;
+  left: 35%;
   margin-top: -15%;
 }
 
@@ -65,8 +63,8 @@ li a:hover {
   background-color: #914f00;
   padding: 20px;
   position: absolute;
-  left: 50%;
-  margin-left: -25%;
+  left: 25%;
+  margin-left: -20px;
   margin-top: 30px;
 }
 
@@ -87,7 +85,7 @@ li a:hover {
   width: 25%;
   float: left;
   overflow: auto;
-  max-height: 200px;
+  max-height: 220px;
   padding: 10px;
   background-color: #AF640B
 }
@@ -95,7 +93,7 @@ li a:hover {
 #right_box {
   width: 70%;
   overflow: auto;
-  max-height: 200px;
+  max-height: 220px;
   background-color: #AF640B;
   margin-left: 10px;
   float: right;
@@ -128,9 +126,11 @@ h2 {
   color: white;
 }
     
-#error {
+#message {
   color: white;
   text-align: center;
+  font-family: tahoma;
+  padding: 5px;
 }
 
 input[type=submit] {
@@ -158,7 +158,7 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-.button {
+button {
   background-color: #914f00;
   border: none;
   padding: 14px 20px;
@@ -193,5 +193,18 @@ td, th {
   padding: 10px 5px;
   font-family: verdana;
   font-size: 100%;
-  //border-style: solid;
+}
+
+#logout {
+  position:absolute;
+  top: 30px;
+  right: 40px;
+  font-family: verdana;
+  font-size: 120%;
+  color: white;
+  cursor: pointer;
+}
+
+#logout:hover {
+  text-decoration: underline;
 }
