@@ -9,12 +9,15 @@
         			</tr>";
 
 	include("db_connect.php");
-	$query = "	select s.shipment_id, s.order_id, s.status 
-                from shipment s, packer p, packing_line l, warehouse w
-                where p.employee_id = l.packer_id
-                and s.shipment_id = l.shipment_id
-                and p.employee_id = 5 
-                and p.warehouse_id = w.warehouse_id;";
+	$query = "select p.name, ps.quantity, a.location
+            from shipment s, product_shipment ps, product p,
+            availability a, warehouse w
+            where p.product_id = ps.product_id
+            and ps.shipment_id = s.shipment_id
+            and a.product_id = p.product_id
+            and s.warehouse_id = w.warehouse_id
+            and w.warehouse_id = a.warehouse_id
+            and s.shipment_id = ".$shipment_id.";";
 	$rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");
     while ($row = pg_fetch_row($rs)) {
     	$content = $content."<tr>

@@ -52,7 +52,7 @@ session_start();
       pg_close($connection);
       ?>
     </div>
-    <div id="right_box"><!-- content loaded here</div>
+    <div id="right_box"><!-- content loaded here--></div>
   </div>
 </body>
 </html>
