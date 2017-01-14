@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 ?>
@@ -26,9 +25,7 @@ session_start();
   <table id="logout_options_table">
     <tr>
      <td style="padding: 15px">
-        <form>
-          <button id="options" type="submit" formaction="../php/logout.php">Options</button>
-        </form>
+        <button id="options" type="submit" onclick="window.location.href='options.html'">Options</button>
      </td>    <!--TO POWINNO ODSYŁAĆ DO OPCJI!/-->
      <td style="padding: 15px">
        <form>

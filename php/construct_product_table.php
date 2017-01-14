@@ -31,7 +31,7 @@
         <tr>
           <td>
             <form>
-              <button id=\"button_bottom\">Completed</button>
+              <button class=\"button_bottom\">Completed</button>
             </form>
           </td>
         </tr>

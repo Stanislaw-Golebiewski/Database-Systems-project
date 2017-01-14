@@ -14,9 +14,7 @@
   <table id="logout_options_table">
     <tr>
      <td style="padding: 15px">
-        <form>
-          <button id="options" type="submit" formaction="../php/logout.php">Options</button>
-        </form>
+        <button id="options" type="submit" onclick="window.location.href='options.html'">Options</button>
      </td>    <!--TO POWINNO ODSYŁAĆ DO OPCJI!/-->
      <td style="padding: 15px">
        <form>
@@ -39,7 +37,7 @@
     </ul>
 
     <div id="full_box">
-      <table id="big_table">
+      <table class="big_table">
         <tr>
           <th>Shipment ID</th>
           <th>Show content</th>
@@ -174,14 +172,6 @@
             }
           })();
         }
-/*
-        buttons[0].onclick = function() {modals[0].style.display = "block";}
-        console.log(buttons[0].onclick);
-        
-        // When the user clicks the button, open the modal 
-
-        // When the user clicks on <span> (x), close the modal
-          */
     </script>
 
     </div>

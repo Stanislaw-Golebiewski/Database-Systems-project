@@ -17,9 +17,7 @@
   <table id="logout_options_table">
     <tr>
      <td style="padding: 15px">
-        <form>
-          <button id="options" type="submit" formaction="../php/logout.php">Options</button>
-        </form>
+        <button id="options" type="submit" onclick="window.location.href='options.html'">Options</button>
      </td>    <!--TO POWINNO ODSYŁAĆ DO OPCJI!/-->
      <td style="padding: 15px">
        <form>
@@ -40,7 +38,7 @@
       <li><a class="active" href="driver_shipments.html">Your shipments</a></li>
       <li><a href="driver_awaiting.html">Awaiting</a></li>
     </ul>
-
+<div style="display: flex;">
     <div id="left_box">
       <dev id="display_element" name='1' onclick="show_content(this)">Shipment 1</dev><br>
       <dev id="display_element" name='2' onclick="show_content(this)">Shipment 2</dev>
@@ -56,6 +54,7 @@
         </tr>
       </table>
     </div>
+  </div>
 
   </div>
 </body>
