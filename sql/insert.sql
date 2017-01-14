@@ -240,14 +240,14 @@ INSERT INTO packing_line (packer_id, shipment_id)
 INSERT INTO packing_line (packer_id, shipment_id)
   VALUES (7, 4);
 
-INSERT INTO packing_line (packer_id, shipment_id)
-  VALUES (8, 5);
+/*INSERT INTO packing_line (packer_id, shipment_id)
+  VALUES (8, 5);*/
 
 INSERT INTO packing_line (packer_id, shipment_id)
   VALUES (7, 5);
 
-INSERT INTO packing_line (packer_id, shipment_id)
-  VALUES (8, 6);
+/*INSERT INTO packing_line (packer_id, shipment_id)
+  VALUES (8, 6);*/
 
 /*PRODUCT_SHIPMENT*/
 INSERT INTO product_shipment (shipment_id, product_id, quantity)
