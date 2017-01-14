@@ -14,9 +14,12 @@
 </head>
 <body>
 
-  <form>
-    <div id="logout">Log out</div>
-  </form>
+  <table id="logout_options_table">
+    <tr>
+     <td style="padding: 15px"><form id="options">Options</form></td>
+     <td style="padding: 15px"><form id="logout">Log out</form></td>
+    </tr>
+  </table>
 
   <div>
     <h1>Spock, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
@@ -38,7 +41,7 @@
 
     <div id="right_box">
       <h2>WAREHOUSE 1</h2>
-      <table>
+      <table class="small_table">
         <tr>
           <td>Shipment 1</td>
           <td><button>Collected</button></td>     <!--Do tego musi być podpięta funkcja, która zmieni status shipmentu na W DRODZE i przeladuje strone!/-->

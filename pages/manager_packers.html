@@ -14,9 +14,13 @@
 </head>
 <body>
 
-  <form>
-    <div id="logout">Log out</div>
-  </form>
+  <table id="logout_options_table">
+    <tr>
+     <td style="padding: 15px"><form id="options">Options</form></td>
+     <td style="padding: 15px"><form id="logout">Log out</form></td>
+    </tr>
+  </table>
+
 
   <div>
     <h1>Spock, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
@@ -29,24 +33,51 @@
       <li><a class="active" href="manager_shipments.html">Packers</a></li>
       <li><a href="manager_shipments.html">Shipments</a></li>
       <li><a href="manager_products.html">Products</a></li>
+      <li><a href="manager_orders.html">Orders</a></li>
     </ul>
 
-    <div id="left_box">
-      <dev id="display_element" name='1' onclick="show_content(this)">Packer 1</dev><br>
-      <dev id="display_element" name='2' onclick="show_content(this)">Packer 2</dev>
-      <dev id="display_element" name='3' onclick="show_content(this)">Packer 3</dev>
-    </div>
-
-    <div id="right_box">
-      <h2>PACKER 1</h2>
-      <table>
+    <div id="full_box">
+      <table id="big_table">
         <tr>
-          <td>Shipment 1</td>
-          <td><button>Remove</button></td>     <!--Do tego musi być podpięta funkcja, która sprawi, że ten paker nie będzie już przypisany do tego szipmentu!/-->
+          <th>ID</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Shipments</th>
+          <th> </th>
         </tr>
         <tr>
-          <td>Shipment 2</td>
-          <td><button>Remove</button></td>
+          <td><input type="in_table" name="new_id" placeholder="ID"></td>
+          <td><input type="in_table" name="new_name" placeholder="Name"></td>
+          <td><input type="in_table" name="new_phone" placeholder="Phone"></td>
+          <td>-</td>
+          <td><button>Add</button></td>
+        <tr>
+          <td>1</td>
+          <td>Danuta</td>
+          <td>+4321231232</td>
+          <td>12</td>
+          <td><button>Fire</button></td>     <!--Do tego musi być podpięta funkcja, która sprawi, że ten paker nie będzie już przypisany do tego szipmentu!/-->
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Danuta</td>
+          <td>+4321231232</td>
+          <td>12</td>
+          <td><button>Fire</button></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Danuta</td>
+          <td>+4321231232</td>
+          <td>12</td>
+          <td><button>Fire</button></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Danuta</td>
+          <td>+4321231232</td>
+          <td>12</td>
+          <td><button>Fire</button></td>
         </tr>
       </table>
     </div>

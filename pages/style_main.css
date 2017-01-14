@@ -99,6 +99,40 @@ li a:hover {
   float: right;
 }
 
+#full_box {
+  width: 95%;
+  overflow: auto;
+  max-height: 200px;
+  padding: 2.5%;
+  background-color: #AF640B
+}
+
+#fot_box {
+  width: 20%;
+  float: left;
+  overflow: auto;
+  max-height: 220px;
+  background-color: #AF640B
+}
+
+#sot_box {
+  width: 38.5%;
+  overflow: auto;
+  max-height: 220px;
+  background-color: #AF640B;
+  margin-left: 10px;
+  float: left;
+}
+
+#tot_box {
+  width: 38.5%;
+  overflow: auto;
+  max-height: 220px;
+  background-color: #AF640B;
+  margin-left: 10px;
+  float: left;
+}
+
 
 h1 {
   font-family: verdana;
@@ -176,7 +210,7 @@ button {
   font-weight: bold;
 }
 
-table {
+.small_table {
   width: 90%;
   margin-bottom: 10px;
   margin-left: 5%;
@@ -196,15 +230,53 @@ td, th {
 }
 
 #logout {
-  position:absolute;
-  top: 30px;
-  right: 40px;
-  font-family: verdana;
-  font-size: 120%;
-  color: white;
   cursor: pointer;
 }
-
 #logout:hover {
   text-decoration: underline;
+}
+
+#options {
+  cursor: pointer;
+}
+#options:hover {
+  text-decoration: underline;
+}
+
+#logout_options_table {
+  position:absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 120%;
+}
+
+#big_table {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input[type=in_table] {
+  width: 90%;
+  display: inline-block;
+  padding: 4px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: verdana;
+  font-size: 100%;
+}
+
+.button_bottom {
+  background-color: #914f00;
+  border: none;
+  padding: 14px 20px;
+  color: white;
+  font-family: verdana;
+  font-size: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  size: fixed;
 }

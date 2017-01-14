@@ -14,9 +14,12 @@
 </head>
 <body>
 
-  <form>
-    <div id="logout">Log out</div>
-  </form>
+  <table id="logout_options_table">
+    <tr>
+     <td style="padding: 15px"><form id="options">Options</form></td>
+     <td style="padding: 15px"><form id="logout">Log out</form></td>
+    </tr>
+  </table>
 
   <div>
     <h1>Spock, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
@@ -29,28 +32,62 @@
       <li><a href="manager_packers.html">Packers</a></li>
       <li><a class="active" href="manager_shipments.html">Shipments</a></li>
       <li><a href="manager_products.html">Products</a></li>
+      <li><a href="manager_orders.html">Orders</a></li>
     </ul>
 
-    <div id="left_box">
-      <dev id="display_element" name='1' onclick="show_content(this)">Shipment 1</dev><br>
-      <dev id="display_element" name='2' onclick="show_content(this)">Shipment 2</dev>
-      <dev id="display_element" name='3' onclick="show_content(this)">Shipment 3</dev>
+    <div id="fot_box">
+      <h2>Pending</h2>
+      <table class="small_table">
+        <tr>
+          <th>Shipment</th>
+        </tr>
+        <tr>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>34</td>
+        </tr>
+      </table>
     </div>
 
-    <div id="right_box">
-      <h2>SHIPMENT 1</h2>
-      <table>
+    <div id="sot_box">
+      <h2>Completing</h2>
+      <table class="small_table">
         <tr>
-          <td>Packer 3</td>
-          <td><button>Remove</button></td>     <!--Do tego musi być podpięta funkcja, która sprawi, że ten paker nie będzie już przypisany do tego szipmentu!/-->
+          <th>Shipment</th>
+          <th>Packer</th>
+        <tr>
+          <td>1</td>
+          <td>3</td>
         </tr>
         <tr>
-          <td>Packer 1</td>
-          <td><button>Remove</button></td>
+          <td>32</td>
+          <td>6</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="tot_box">
+      <h2>Awaiting</h2>
+      <table class="small_table">
+        <tr>
+          <th>Shipment</th>
+          <th>Driver</th>
+        <tr>
+          <td>1</td>
+          <td>3</td>
         </tr>
         <tr>
-          <td>Packer 2</td>
-          <td><button>Add</button></td>
+          <td>32</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>32</td>
+          <td>6</td>
         </tr>
       </table>
     </div>

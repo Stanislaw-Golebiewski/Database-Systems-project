@@ -14,9 +14,12 @@
 </head>
 <body>
 
-  <form>
-    <div id="logout">Log out</div>
-  </form>
+  <table id="logout_options_table">
+    <tr>
+     <td style="padding: 15px"><form id="options">Options</form></td>
+     <td style="padding: 15px"><form id="logout">Log out</form></td>
+    </tr>
+  </table>
 
   <div>
     <h1>Spock, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
@@ -29,6 +32,7 @@
       <li><a href="manager_packers.html">Packers</a></li>
       <li><a href="manager_shipments.html">Shipments</a></li>
       <li><a class="active" href="manager_products.html">Products</a></li>
+      <li><a href="manager_orders.html">Orders</a></li>
     </ul>
 
     <div id="left_box">
@@ -39,7 +43,7 @@
 
     <div id="right_box">
       <h2>< 10</h2>
-      <table>
+      <table class="small_table">
         <tr>
           <th>Name</th>
           <th>Quantity</th>
