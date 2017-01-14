@@ -24,40 +24,29 @@
   </div>
 
   <div id="main_box">
-  
+
     <ul>
-      <li><a href="packer_shipments.php">Your shipments</a></li>
-      <li><a class="active" href="packer_workers.html">Co-workers</a></li>
+      <li><a class="active" href="manager_shipments.html">Packers</a></li>
+      <li><a href="manager_shipments.html">Shipments</a></li>
+      <li><a href="manager_products.html">Products</a></li>
     </ul>
 
     <div id="left_box">
-      <dev id="display_element" name='1' onclick="show_content(this)">Shipment 1</dev><br>
-      <dev id="display_element" name='2' onclick="show_content(this)">Shipment 2</dev>
-      <dev id="display_element" name='3' onclick="show_content(this)">Shipment 3</dev>
+      <dev id="display_element" name='1' onclick="show_content(this)">Packer 1</dev><br>
+      <dev id="display_element" name='2' onclick="show_content(this)">Packer 2</dev>
+      <dev id="display_element" name='3' onclick="show_content(this)">Packer 3</dev>
     </div>
 
     <div id="right_box">
-      <h2>SHIPMENT 1</h2>
+      <h2>PACKER 1</h2>
       <table>
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Sector</th>
+          <td>Shipment 1</td>
+          <td><button>Remove</button></td>     <!--Do tego musi być podpięta funkcja, która sprawi, że ten paker nie będzie już przypisany do tego szipmentu!/-->
         </tr>
         <tr>
-          <td>1</td>
-          <td>Grazyna</td>
-          <td>D</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Grazyna</td>
-          <td>D</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Grazyna</td>
-          <td>D</td>
+          <td>Shipment 2</td>
+          <td><button>Remove</button></td>
         </tr>
       </table>
     </div>

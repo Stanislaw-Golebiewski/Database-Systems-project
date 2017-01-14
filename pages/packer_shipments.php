@@ -21,13 +21,19 @@ session_start();
   </script>
 </head>
 <body>
+
+  <form>
+    <div id="logout">Log out</div>
+  </form>
+
   <div>
     <h1>Spock, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
     <div id="logo_big">DuczBase</div>
   </div>
+
   <div id="main_box">
     <ul>
-      <li><a class="active" href="packer_shipments.html">Your shipments</a></li>
+      <li><a class="active" href="packer_shipments.php">Your shipments</a></li>
       <li><a href="packer_workers.html">Co-workers</a></li>
     </ul>
     <div id="left_box">
