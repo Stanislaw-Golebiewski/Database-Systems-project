@@ -9,7 +9,7 @@
           <td><button name=\"$id\" onclick=\"fire_emplyee(this)\">Fire</button></td> 
         </tr>";
 	}
-	$content="<table id=\"big_table\">
+	$content="<table class=\"big_table\">
         	  <tr>
           	     <th>ID</th>
           	     <th>Name</th>

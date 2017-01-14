@@ -7,6 +7,9 @@ if($_SESSION["user_role"] == "MANAGER"){
 	include("get_warehouse_id_for_session.php");
 	header("location: ../pages/manager_packers.php");
 }
+if($_SESSION["user_role"] == "DRIVER"){
+	header("location: ../pages/driver_shipments.php");
+}
 ?>
 <!DOCTYPE HTML>
 <html>

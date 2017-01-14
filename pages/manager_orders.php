@@ -23,13 +23,19 @@ session_start();
 
   <table id="logout_options_table">
     <tr>
-     <td style="padding: 15px"><form id="options">Options</form></td>
-     <td style="padding: 15px"><form id="logout">Log out</form></td>
+     <td style="padding: 15px">
+        <button id="options" type="submit" onclick="window.location.href='options.php'">Options</button>
+     </td> 
+     <td style="padding: 15px">
+       <form>
+         <button id="logout" type="submit" formaction="../php/logout.php">Logout</button>
+       </form>
+     </td>
     </tr>
   </table>
 
   <div>
-    <h1><?php echo $_SESSION["warehouse_id"]?>, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
+    <h1><?php echo $_SESSION["user_login"]?>, welcome to</h1> 
     <div id="logo_big">DuczBase</div>
   </div>
 
