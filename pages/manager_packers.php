@@ -31,7 +31,7 @@ session_start();
 
 
   <div>
-    <h1>Spock, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
+    <h1><?php echo $_SESSION["warehouse_id"]?>, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
     <div id="logo_big">DuczBase</div>
   </div>
 
