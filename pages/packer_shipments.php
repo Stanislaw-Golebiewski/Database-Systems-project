@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 ?>
@@ -23,7 +24,7 @@ session_start();
 <body>
 
   <form>
-    <div id="logout">Log out</div>
+     <button id="logout" type="submit" formaction="../php/logout.php">Logout</button>
   </form>
 
   <div>
@@ -34,7 +35,7 @@ session_start();
   <div id="main_box">
     <ul>
       <li><a class="active" href="packer_shipments.php">Your shipments</a></li>
-      <li><a href="packer_workers.html">Co-workers</a></li>
+      <li><a href="packer_all_shipments.php">Get new shipment</a></li>
     </ul>
     <div id="left_box">
       <?php 
