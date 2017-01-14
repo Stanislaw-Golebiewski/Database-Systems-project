@@ -1,3 +1,15 @@
+<?php 
+session_start();
+  if (!isset($_SESSION["user_id"]))
+   {
+      header("location: login_page.php");
+   }
+   else if($_SESSION["user_role"] != "MANAGER")
+   {
+      header("location: login_page.php");
+   }
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -17,7 +29,7 @@
   </table>
 
   <div>
-    <h1>Spock, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
+    <h1><?php echo $_SESSION["warehouse_id"]?>, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->
     <div id="logo_big">DuczBase</div>
   </div>
 
@@ -30,44 +42,19 @@
     </ul>
 
     <div id="left_box">
-      <dev id="display_element" name='1' onclick="show_content(this)">Order 1</dev>
-      <dev id="display_element" name='2' onclick="show_content(this)">Order 2</dev>
-      <dev id="display_element" name='3' onclick="show_content(this)">Order 3</dev>
+      <?php 
+      include("../php/db_connect.php");
+      $query = "select o.order_id from orders o";
+      $rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");
+      while ($row = pg_fetch_row($rs)) {
+        echo "<dev id=\"display_element\" name='".$row[0]."' onclick=\"show_content(this)\">Order ".$row[0]."</dev>";
+      }
+      pg_close($connection);
+      ?>
     </div>
 
     <div id="right_box">
-      <h2>Order 1</h2>
-      <table class="small_table">
-        <tr>
-          <th>Product</th>
-          <th>Quantity</th>
-          <th>In stock</th>
-          <th>Add</th>
-        </tr>
-        <tr>
-          <td>Banan</td>
-          <td>3</td>
-          <td>43</td>
-          <td><input type="in_table" name="1" placeholder="ID"></td>
-        </tr>
-        <tr>
-          <td>Czystek</td>
-          <td>9</td>
-          <td>132</td>
-          <td><input type="in_table" name="2" placeholder="ID"></td>
-        </tr>
-        <tr>
-          <td>Pumeks</td>
-          <td>2</td>
-          <td>122</td>
-          <td><input type="in_table" name="3" placeholder="ID"></td>
-        </tr>
-      </table>
-      <table class="small_table">
-        <tr>
-          <td><button id="button_bottom">Create shipment</button></td>
-        </tr>
-      </table>
+    <!-- -->
     </div>
 
   </div>
