@@ -16,8 +16,16 @@
 
   <table id="logout_options_table">
     <tr>
-     <td style="padding: 15px"><form id="options">Options</form></td>
-     <td style="padding: 15px"><form id="logout">Log out</form></td>
+     <td style="padding: 15px">
+        <form>
+          <button id="options" type="submit" formaction="../php/logout.php">Options</button>
+        </form>
+     </td>    <!--TO POWINNO ODSYŁAĆ DO OPCJI!/-->
+     <td style="padding: 15px">
+       <form>
+         <button id="logout" type="submit" formaction="../php/logout.php">Logout</button>
+       </form>
+     </td>
     </tr>
   </table>
 

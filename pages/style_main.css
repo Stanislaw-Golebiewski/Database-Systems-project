@@ -104,7 +104,7 @@ li a:hover {
   overflow: auto;
   max-height: 200px;
   padding: 2.5%;
-  background-color: #AF640B
+  background-color: #AF640B;
 }
 
 #fot_box {
@@ -179,7 +179,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #d4801c; //#e39c48;
+  background-color: #d4801c;
 }
 
 input[type=text], input[type=password] {
@@ -203,7 +203,6 @@ button {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  size: fixed;
 }
 
 .button:hover {
@@ -231,6 +230,9 @@ td, th {
 
 #logout {
   cursor: pointer;
+  font-size: 120%;
+  background-color: #d4801c;
+  padding: 0;
 }
 #logout:hover {
   text-decoration: underline;
@@ -238,6 +240,9 @@ td, th {
 
 #options {
   cursor: pointer;
+  font-size: 120%;
+  background-color: #d4801c;
+  padding: 0;
 }
 #options:hover {
   text-decoration: underline;
@@ -247,7 +252,6 @@ td, th {
   position:absolute;
   top: 20px;
   right: 30px;
-  font-size: 120%;
 }
 
 #big_table {
@@ -278,5 +282,45 @@ input[type=in_table] {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  size: fixed;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: black; /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #AF640B;
+    margin: auto;
+    max-height: 500px;
+    padding: 20px;
+    width: 40%;
+    border-radius: 10px;
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #6b3a00;
+    text-decoration: none;
+    cursor: pointer;
 }

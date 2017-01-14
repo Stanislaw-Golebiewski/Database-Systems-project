@@ -23,9 +23,21 @@ session_start();
 </head>
 <body>
 
-  <form>
-     <button id="logout" type="submit" formaction="../php/logout.php">Logout</button>
-  </form>
+  <table id="logout_options_table">
+    <tr>
+     <td style="padding: 15px">
+        <form>
+          <button id="options" type="submit" formaction="../php/logout.php">Options</button>
+        </form>
+     </td>    <!--TO POWINNO ODSYŁAĆ DO OPCJI!/-->
+     <td style="padding: 15px">
+       <form>
+         <button id="logout" type="submit" formaction="../php/logout.php">Logout</button>
+       </form>
+     </td>
+    </tr>
+  </table>
+
 
   <div>
     <h1>Spock, welcome to</h1><br>    <!--TU POWINNO BYĆ IMIĘ ZIOMKA/-->

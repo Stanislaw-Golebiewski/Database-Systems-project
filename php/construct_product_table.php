@@ -1,7 +1,7 @@
 <?php
 	$shipment_id = $_REQUEST["shipment"];
 	$content = "<h2>SHIPMENT ".$shipment_id."</h2>
-				<table>
+				<table class=\"small_table\">
      			   	<tr>
           			<th>Product</th>
           			<th>Quantity</th>
@@ -26,5 +26,14 @@
           				<td>".$row[2]."</td>
         			</tr>";
      }
-     echo $content."</table>";
+     echo $content."</table>
+     <table class=\"small_table\">
+        <tr>
+          <td>
+            <form>
+              <button id=\"button_bottom\">Completed</button>
+            </form>
+          </td>
+        </tr>
+      </table>";
 ?>
