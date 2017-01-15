@@ -1,4 +1,4 @@
-﻿/*CUSTOMERS*/
+/*CUSTOMERS*/
 INSERT INTO customer (customer_id, name, phone, address_street, address_number, address_postal_code, address_city)
   VALUES (1, 'Palaiologos', '+48390285723', 'Kwiatowa', '10023', '23-531', 'Radom');
 
@@ -287,4 +287,4 @@ INSERT INTO product_shipment (shipment_id, product_id, quantity)
   VALUES (6, 1, 100);
 
 INSERT INTO product_shipment (shipment_id, product_id, quantity)
-  VALUES (7, 5, 1);
+VALUES (7, 5, 1);

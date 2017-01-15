@@ -55,14 +55,41 @@ session_start();
           <th>Show content</th>
           <th>Add to your shipments</th>
         </tr>
-        <tr>
+        <?php
+          include("../php/db_connect.php");
+          $query = "select s.shipment_id
+                    from shipment s,  warehouse w, packer p
+                    where s.warehouse_id = w.warehouse_id
+                    and p.warehouse_id =  w.warehouse_id
+                    and p.employee_id = ".$_SESSION["user_id"]."
+                    and s.status = 'PENDING APPROVAL'";
+          $rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");
+          while ($row = pg_fetch_row($rs)) {
+          echo "<tr>
+                  <td>".$row[0]."</td>
+                  <td>
+                    <button name=\"m".$row[0]."\" class=\"show_button\" onclick=\"function() { getElementsByClassName(modal).getElementById(this.name).style.display = &quot;block&quot;;}\">Show</button>
+                    <div id=\"m".$row[0]."\" class=\"modal\">
+                    <div class=\"modal-content\">
+                    <span class=\"close\">&times;</span>
+                      <h2>Shipment 9</h2>
+                        <p>10 x Ziemniak (JOS21) </p>
+                     </div>
+                    </div>
+                    </td>
+                    <td><button>Add</button></td>    
+                </tr>";
+          }
+         pg_close($connection);
+        ?>
+        <!-- <tr>
           <td>9</td>
           <td>
             <button name="m0" class="show_button" onclick="function() { getElementsByClassName(modal).getElementById(this.name).style.display = &quot;block&quot;;}">Show</button>
             <div id="m0" class="modal">
               <div class="modal-content">
                 <span class="close">&times;</span>
-                <h2>Shipment 9</h2>
+                <!-- <h2>Shipment 9</h2>
                 <p>10 x Ziemniak (JOS21</p>
                 <p>12 x Fasolka (JCZ10)</p>
                 <p>9x Drapaczka (MOJ34)</p>
@@ -74,11 +101,11 @@ session_start();
                 <p>10 x Ziemniak (JOS21</p>
                 <p>12 x Fasolka (JCZ10)</p>
                 <p>9x Drapaczka (MOJ34)</p>
-                <p>100 x Żelatyna w sprayu (COZ91)</p>
+                <p>100 x Żelatyna w sprayu (COZ91)</p> 
               </div>
             </div>
           </td>
-          <td><button>Add</button></td>     <!--Do tego musi być podpięta funkcja, która sprawi, że shipment zostanie przypisany do pakera/-->
+          <td><button>Add</button></td>    
         </tr>
         <tr>
           <td>1</td>
@@ -152,12 +179,10 @@ session_start();
             </div>
           </td>
           <td><button>Add</button></td>
-        </tr>
+        </tr> -->
       </table>
 
       <script>
-
-
         var modals = document.getElementsByClassName("modal");
         console.log(modals);
         var buttons = document.getElementsByClassName("show_button");
