@@ -86,7 +86,7 @@ driver_id INTEGER,
 warehouse_id INTEGER,
 order_id INTEGER NOT NULL,
 /*shipment can have six possible statuses*/
-status VARCHAR(20) CHECK(status in ('PENDING APPROVAL','COMPLETING','DELIVERED','ON THE WAY','CANCELED')) NOT NULL,
+status VARCHAR(20) CHECK(status in ('PENDING APPROVAL','COMPLETING', 'AWAITING', 'DELIVERED','ON THE WAY','CANCELED')) NOT NULL,
 delivery_date DATE,
 FOREIGN KEY(driver_id) REFERENCES driver(employee_id),
 FOREIGN KEY(warehouse_id) REFERENCES warehouse(warehouse_id) ON DELETE CASCADE,

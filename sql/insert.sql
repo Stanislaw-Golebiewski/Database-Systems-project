@@ -1,4 +1,4 @@
-/*CUSTOMERS*/
+﻿/*CUSTOMERS*/
 INSERT INTO customer (customer_id, name, phone, address_street, address_number, address_postal_code, address_city)
   VALUES (1, 'Palaiologos', '+48390285723', 'Kwiatowa', '10023', '23-531', 'Radom');
 
@@ -48,6 +48,9 @@ INSERT INTO orders (order_id, customer_id, date, price)
 INSERT INTO orders (order_id, customer_id, date, price)
   VALUES (6, 4, '2016-12-05', 11.00);
 
+INSERT INTO orders (order_id, customer_id, date, price)
+  VALUES (7, 2, '2011-09-05', 9.00);
+
 
 /*PRODUCTS_ORDERS*/
 INSERT INTO product_order (order_id, product_id, quantity)
@@ -76,6 +79,9 @@ INSERT INTO product_order (order_id, product_id, quantity)
 
 INSERT INTO product_order (order_id, product_id, quantity)
   VALUES (6, 5, 1);
+
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (7, 1, 11);
 
 
 /*EMPLOYEES*/
@@ -216,10 +222,13 @@ INSERT INTO shipment (shipment_id, driver_id, warehouse_id, order_id, status)
   VALUES (5, 3, 2, 4, 'COMPLETING');
 
 INSERT INTO shipment (shipment_id, driver_id, warehouse_id, order_id, status)
-  VALUES (6, 4, 2, 5, 'ON THE WAY');
+  VALUES (6, 3, 2, 5, 'AWAITING');
 
 INSERT INTO shipment (shipment_id, driver_id, warehouse_id, order_id, status)
   VALUES (7, 3, 2, 6, 'ON THE WAY');
+
+INSERT INTO shipment (shipment_id, driver_id, warehouse_id, order_id, status)
+  VALUES (8, 3, 2, 7, 'AWAITING');
 
 /*PACKING LINES*/
 INSERT INTO packing_line (packer_id, shipment_id)
