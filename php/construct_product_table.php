@@ -30,9 +30,7 @@
      <table class=\"small_table\">
         <tr>
           <td>
-            <form>
-              <button class=\"button_bottom\">Completed</button>
-            </form>
+            <button class=\"button_bottom\" onclick=\"completeShipment(".$shipment_id.")\">Completed</button>
           </td>
         </tr>
       </table>";

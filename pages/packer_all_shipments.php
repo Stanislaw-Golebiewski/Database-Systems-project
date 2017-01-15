@@ -15,11 +15,7 @@ session_start();
 <head>
   <title>DuczBase</title>
   <link rel="stylesheet" type="text/css" href="style_main.css">
-  <script>    //TĘ FUNKCJĘ TRZEBA ZMIENIĆ!!!
-    function show_content(field)
-    {
-    }
-  </script>
+  <script src="../js/packer_shipments_scripts.js"></script> 
 </head>
 <body>
 
@@ -65,121 +61,33 @@ session_start();
                     and s.status = 'PENDING APPROVAL'";
           $rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");
           while ($row = pg_fetch_row($rs)) {
-          echo "<tr>
-                  <td>".$row[0]."</td>
-                  <td>
-                    <button name=\"m".$row[0]."\" class=\"show_button\" onclick=\"function() { getElementsByClassName(modal).getElementById(this.name).style.display = &quot;block&quot;;}\">Show</button>
-                    <div id=\"m".$row[0]."\" class=\"modal\">
-                    <div class=\"modal-content\">
-                    <span class=\"close\">&times;</span>
-                      <h2>Shipment 9</h2>
-                        <p>10 x Ziemniak (JOS21) </p>
-                     </div>
-                    </div>
-                    </td>
-                    <td><button>Add</button></td>    
-                </tr>";
+            echo "<tr><td>".$row[0]."</td><td>
+            <button id=\"button".$row[0]."\" class=\"show_button\">Show</button>
+            <div id=\"modal".$row[0]."\" class=\"modal\">
+              <div class=\"modal-content\">
+                <span class=\"close\">&times;</span>
+                <h2>Shipment ".$row[0]."</h2>";
+            //////////////////////////////////////////
+            $query = "select ps.quantity, p.name, a.location
+                      from shipment s, product_shipment ps, product p, availability a, warehouse w, packer pac
+                      where s.shipment_id = ps.shipment_id
+                      and ps.product_id = p.product_id
+                      and a.product_id = p.product_id
+                      and a.warehouse_id = w.warehouse_id
+                      and pac.warehouse_id = w.warehouse_id
+                      and s.shipment_id = ".$row[0]."
+                      and pac.employee_id =".$_SESSION["user_id"];
+
+            $response = pg_query($connection, $query) or die("Cannot execute query: $query\n");
+            while ($row_2 = pg_fetch_row($response)) {
+               echo "<p>".$row_2[0]." x ".$row_2[1]." ".$row_2[2]."</p>";
+            }
+            /////////////////////////////////////////
+            echo "</div></div></td><td><button name=\"".$row[0]."\"onclick=\"addShipment(this.name)\">Add</button></td></tr>";
           }
          pg_close($connection);
         ?>
-        <!-- <tr>
-          <td>9</td>
-          <td>
-            <button name="m0" class="show_button" onclick="function() { getElementsByClassName(modal).getElementById(this.name).style.display = &quot;block&quot;;}">Show</button>
-            <div id="m0" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <!-- <h2>Shipment 9</h2>
-                <p>10 x Ziemniak (JOS21</p>
-                <p>12 x Fasolka (JCZ10)</p>
-                <p>9x Drapaczka (MOJ34)</p>
-                <p>100 x Żelatyna w sprayu (COZ91)</p>
-                <p>10 x Ziemniak (JOS21</p>
-                <p>12 x Fasolka (JCZ10)</p>
-                <p>9x Drapaczka (MOJ34)</p>
-                <p>100 x Żelatyna w sprayu (COZ91)</p>
-                <p>10 x Ziemniak (JOS21</p>
-                <p>12 x Fasolka (JCZ10)</p>
-                <p>9x Drapaczka (MOJ34)</p>
-                <p>100 x Żelatyna w sprayu (COZ91)</p> 
-              </div>
-            </div>
-          </td>
-          <td><button>Add</button></td>    
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>
-            <button id="button1" class="show_button">Show</button>
-            <div id="modal1" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Shipment 1</h2>
-                <p>10 x Ziemniak (JOS21</p>
-                <p>12 x Fasolka (JCZ10)</p>
-                <p>9x Drapaczka (MOJ34)</p>
-                <p>10 x Ziemniak (JOS21</p>
-                <p>12 x Fasolka (JCZ10)</p>
-                <p>9x Drapaczka (MOJ34)</p>
-                <p>100 x Żelatyna w sprayu (COZ91)</p>
-              </div>
-            </div>
-          </td>
-          <td><button>Add</button></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>
-            <button id="button3" class="show_button">Show</button>
-            <div id="modal3" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Shipment 3</h2>
-                <p>10 x Ziemniak (JOS21</p>
-                <p>12 x Fasolka (JCZ10)</p>
-                <p>9x Drapaczka (MOJ34)</p>
-                <p>100 x Żelatyna w sprayu (COZ91)</p>
-                <p>9x Drapaczka (MOJ34)</p>
-                <p>100 x Żelatyna w sprayu (COZ91)</p>
-              </div>
-            </div>
-          </td>
-          <td><button>Add</button></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>
-            <button id="button2" class="show_button">Show</button>
-            <div id="modal2" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Shipment 2</h2>
-                <p>10 x Ziemniak (JOS21</p>
-                <p>12 x Fasolka (JCZ10)</p>
-                <p>9x Drapaczka (MOJ34)</p>
-              </div>
-            </div>
-          </td>
-          <td><button>Add</button></td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>
-            <button id="button6" class="show_button">Show</button>
-            <div id="modal6" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Shipment 6</h2>
-                <p>10 x Ziemniak (JOS21</p>
-                <p>12 x Fasolka (JCZ10)</p>
-                <p>9x Drapaczka (MOJ34)</p>
-                <p>100 x Żelatyna w sprayu (COZ91)</p>
-                <p>10 x Ziemniak (JOS21</p>
-              </div>
-            </div>
-          </td>
-          <td><button>Add</button></td>
-        </tr> -->
+
       </table>
 
       <script>
@@ -210,7 +118,6 @@ session_start();
           })();
         }
     </script>
-
     </div>
   </div>
 

@@ -14,18 +14,20 @@ session_start();
 <head>
   <title>DuczBase</title>
   <link rel="stylesheet" type="text/css" href="style_main.css">
+  <script src="../js/packer_shipments_scripts.js"></script> 
   <script>
-    function show_content(shipment)
-    {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("right_box").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET", "../php/construct_product_table.php?shipment=" + shipment, true);
-        xmlhttp.send();
-    }
+    window.onload = function() {
+        var x = document.getElementById("left_box");
+        if(x.childNodes.length == 1)
+        {
+          //what if there is no shipments?
+        }
+        else
+        { 
+          show_content(x.childNodes[1].attributes[1].value);
+        }
+    };
+
   </script>
 </head>
 <body>
@@ -62,7 +64,8 @@ session_start();
                 where p.employee_id = l.packer_id
                 and s.shipment_id = l.shipment_id
                 and p.employee_id =".$_SESSION["user_id"]." 
-                and p.warehouse_id = w.warehouse_id;";
+                and p.warehouse_id = w.warehouse_id
+                and s.status = 'COMPLETING';";
       $rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");
       while ($row = pg_fetch_row($rs)) {
         echo "<dev id=\"display_element\" name='".$row[0]."' onclick=\"show_content(this.attributes['name'].value)\">Shipment ".$row[0]."</dev>";
