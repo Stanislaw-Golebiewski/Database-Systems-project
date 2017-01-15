@@ -15,14 +15,7 @@ session_start();
 <head>
   <title>DuczBase</title>
   <link rel="stylesheet" type="text/css" href="style_main.css">
-  <script>    //TĘ FUNKCJĘ TRZEBA ZMIENIĆ!!!
-    function show_content(field)
-    {
-      var table_code = "<table><tr><th>product</th><th>location</th></tr>"
-      var right_box_handler = document.getElementById("right_box");//znajdujemy prawegi diva po jego id, w tym wypadku "right box"
-      right_box_handler.innerHTML = table_code+"<tr><td>"+String(field.attributes['name'].value)+"<td><td>"+String(field.attributes['name'].value)+"</td></tr></table>";
-    }
-  </script>
+  <script src="../js/manager_products_scripts.js"></script> 
 </head>
 <body>
 
@@ -53,7 +46,11 @@ session_start();
       <li><a href="manager_orders.php">Orders</a></li>
     </ul>
 
-    <div id="left_box">
+    <div id="full_box">
+    	<?php include("../php/construct_product_table_for_manager.php") ?>
+    </div> 
+
+    <!--<div id="left_box">
       <dev id="display_element" name='1' onclick="show_content(this)">< 10</dev>
       <dev id="display_element" name='2' onclick="show_content(this)">< 100</dev>
       <dev id="display_element" name='3' onclick="show_content(this)">100   +</dev>
@@ -83,7 +80,7 @@ session_start();
           <td>JIM241</td>
         </tr>
       </table>
-    </div>
+    </div>/-->
 
   </div>
 
