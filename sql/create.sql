@@ -26,7 +26,7 @@ FOREIGN KEY(customer_id) REFERENCES customer(customer_id) ON DELETE CASCADE);
 CREATE TABLE product_order(
 order_id INTEGER NOT NULL, 
 product_id INTEGER NOT NULL,
-quantity INTEGER NOT NULL CHECK(quantity > 0),
+quantity INTEGER NOT NULL CHECK(quantity >= 0),
 PRIMARY KEY(order_id, product_id),
 FOREIGN KEY(order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
 FOREIGN KEY(product_id) REFERENCES product(product_id) ON DELETE CASCADE);
