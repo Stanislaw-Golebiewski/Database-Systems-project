@@ -98,7 +98,7 @@ li a:hover {
   width: 25%;
   float: left;
   overflow: auto;
-  max-height: 220px;
+  max-height: 250px;
   padding: 10px;
   background-color: #AF640B;
   display: flex;
@@ -108,7 +108,7 @@ li a:hover {
 #right_box {
   width: 70%;
   overflow: auto;
-  max-height: 220px;
+  max-height: 250px;
   background-color: #AF640B;
   margin-left: 10px;
   float: right;
@@ -117,7 +117,7 @@ li a:hover {
 #full_box {
   width: 95%;
   overflow: auto;
-  max-height: 350px;
+  max-height: 250px;
   padding: 2.5%;
   background-color: #AF640B;
 }
@@ -126,7 +126,7 @@ li a:hover {
   width: 43%;
   overflow: auto;
   float: left;
-  max-height: 350px;
+  max-height: 250px;
   padding: 2.5%;
   background-color: #AF640B;
 }
@@ -135,7 +135,7 @@ li a:hover {
   width: 43%;
   overflow: auto;
   float: right;
-  max-height: 350px;
+  max-height: 250px;
   padding: 2.5%;
   background-color: #AF640B;
 }
@@ -144,14 +144,14 @@ li a:hover {
   width: 20%;
   float: left;
   overflow: auto;
-  max-height: 220px;
+  max-height: 250px;
   background-color: #AF640B
 }
 
 #sot_box {
   width: 38.5%;
   overflow: auto;
-  max-height: 220px;
+  max-height: 250px;
   background-color: #AF640B;
   margin-left: 10px;
   float: left;
@@ -160,7 +160,7 @@ li a:hover {
 #tot_box {
   width: 38.5%;
   overflow: auto;
-  max-height: 220px;
+  max-height: 250px;
   background-color: #AF640B;
   margin-left: 10px;
   float: left;
