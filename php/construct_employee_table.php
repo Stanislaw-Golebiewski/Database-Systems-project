@@ -30,7 +30,8 @@
             and p.warehouse_id = w.warehouse_id
             and w.warehouse_id = m.warehouse_id
             and m.employee_id = ".$_SESSION["user_id"]."
-            and pc.employee_id = p.employee_id";
+            and pc.employee_id = p.employee_id
+            order by e.employee_id";
 	$rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");
     while ($row = pg_fetch_row($rs)) {
     		$content = $content.html_form($row[0],$row[1],$row[2],$row[3]);

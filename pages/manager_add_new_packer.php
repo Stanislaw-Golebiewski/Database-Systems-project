@@ -8,24 +8,24 @@ session_start();
    {
       header("location: login_page.php");
    }
+  $error = "";
+  include("../php/add_new_packer.php");
 ?>
 
 <!DOCTYPE HTML>
 <html>
 <head>
   <title>DuczBase</title>
-
-  <!-- Link CSS and JS here -->
   <link rel="stylesheet" type="text/css" href="style_main.css">
-  <script src="../js/manager_packers_scripts.js"></script> 
-  <!--                      -->
 </head>
 <body>
 
   <table id="logout_options_table">
     <tr>
      <td style="padding: 15px">
-        <button id="options" type="submit" onclick="window.location.href='options.php'">Options</button>
+        <form>
+         <button id="options" type="submit" formaction="../php/back_to_home.php">Back to Homepage</button>
+       </form>
      </td>
      <td style="padding: 15px">
        <form>
@@ -40,22 +40,28 @@ session_start();
     <div id="logo_big">DuczBase</div>
   </div>
 
-  <div id="main_box">
-    <ul>
-      <li><a class="active" href="manager_shipments.php">Packers</a></li>
-      <li><a href="manager_shipments.php">Shipments</a></li>
-      <li><a href="manager_products.php">Products</a></li>
-      <li><a href="manager_orders.php">Orders</a></li>
-    </ul>
+  <div id="options_box">
+
+    <h3>Add new packer</h3>
 
     <div id="full_box">
-    <?php include("../php/construct_employee_table.php") ?>
-    </div>
     <table class="big_table">
       <tr>
-        <td><button class="button_outside" onclick="window.location.href='manager_add_new_packer.php'">Add new packer</button></td>
+        <td>
+          <form action="" method="post">
+            <input type="text" name="name" placeholder="Name"><br>
+            <input type="text" name="phone" placeholder="Phone number"><br>
+            <input type="text" name="login" placeholder="Login"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input type="submit" name="add_packer" value="Add"><br>
+            <div class="message2"> <?php echo $error; ?> </div>
+          </form>
+        </td>
       </tr>
     </table>
+    </div>
+
   </div>
+
 </body>
 </html>
