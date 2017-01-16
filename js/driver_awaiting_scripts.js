@@ -25,3 +25,15 @@ function collect_shipment(field)
     xmlhttp.send();
 
 }
+
+function show_empty()
+{
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("right_box").innerHTML = this.responseText;
+        }
+    };
+    xmlhttp.open("GET", "../php/construct_empty_right_table.php?message=" + "There are no warehouses with awaiting shipments", true);
+    xmlhttp.send();
+}

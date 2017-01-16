@@ -74,7 +74,7 @@
             and status = 'AWAITING'";
 
   $awaiting = pg_query($connection, $get_awaiting_query) or die("Cannot execute query: $get_awaiting_query\n");
-  $awaiting_number = pg_num_rows($completing);
+  $awaiting_number = pg_num_rows($awaiting);
 
   if ($awaiting_number == 0)
   {

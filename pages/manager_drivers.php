@@ -17,7 +17,7 @@ session_start();
 
   <!-- Link CSS and JS here -->
   <link rel="stylesheet" type="text/css" href="style_main.css">
-  <script src="../js/manager_packers_scripts.js"></script> 
+  <script src="../js/manager_drivers_scripts.js"></script> 
   <!--                      -->
 </head>
 <body>
@@ -42,19 +42,19 @@ session_start();
 
   <div id="main_box">
     <ul>
-      <li><a class="active" href="manager_packers.php">Packers</a></li>
-      <li><a href="manager_drivers.php">Drivers</a></li>
+      <li><a href="manager_packers.php">Packers</a></li>
+      <li><a class="active" href="manager_drivers.php">Drivers</a></li>
       <li><a href="manager_shipments.php">Shipments</a></li>
       <li><a href="manager_products.php">Products</a></li>
       <li><a href="manager_orders.php">Orders</a></li>
     </ul>
 
     <div id="full_box">
-    <?php include("../php/construct_employee_table.php") ?>
+    <?php include("../php/construct_drivers_table.php") ?>
     </div>
     <table class="big_table">
       <tr>
-        <td><button class="button_outside" onclick="window.location.href='manager_add_new_packer.php'">Add new packer</button></td>
+        <td><button class="button_outside" onclick="window.location.href='manager_add_new_driver.php'">Add new driver</button></td>
       </tr>
     </table>
   </div>

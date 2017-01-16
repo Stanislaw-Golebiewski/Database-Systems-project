@@ -15,7 +15,20 @@ session_start();
 <head>
   <title>DuczBase</title>
   <link rel="stylesheet" type="text/css" href="style_main.css">
-  <script src="../js/driver_awaiting_scripts.js"></script> 
+  <script src="../js/driver_awaiting_scripts.js"></script>
+  <script>
+    window.onload = function() {
+        var x = document.getElementById("left_box");
+        if(x.childNodes.length == 1)
+        {
+          //show_empty();
+        }
+        else
+        { 
+          show_awaiting(x.childNodes[1].attributes[1].value);
+        }
+    };
+  </script>
 </head>
 <body>
 
@@ -53,6 +66,13 @@ session_start();
                 and d.employee_id =".$_SESSION["user_id"]." 
                 and s.status = 'AWAITING';";
       $rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");
+      if (pg_num_rows($rs) == 0)
+      {
+          echo "<dev id=\"display_element\">-</dev>
+                <script>
+                  show_empty();
+                </script>";
+      }
       while ($row = pg_fetch_row($rs)) {
         echo "<dev id=\"display_element\" name='".$row[0]."' onclick=\"show_awaiting(this.attributes['name'].value)\">Warehouse ".$row[0]."</dev>";
       }

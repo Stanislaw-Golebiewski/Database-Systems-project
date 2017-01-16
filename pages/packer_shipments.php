@@ -20,14 +20,13 @@ session_start();
         var x = document.getElementById("left_box");
         if(x.childNodes.length == 1)
         {
-          //what if there is no shipments?
+          //show_empty();
         }
         else
         { 
           show_content(x.childNodes[1].attributes[1].value);
         }
     };
-
   </script>
 </head>
 <body>
@@ -67,6 +66,13 @@ session_start();
                 and p.warehouse_id = w.warehouse_id
                 and s.status = 'COMPLETING';";
       $rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");
+      if (pg_num_rows($rs) == 0)
+      {
+          echo "<dev id=\"display_element\">-</dev>
+                <script>
+                  show_empty();
+                </script>";
+      }
       while ($row = pg_fetch_row($rs)) {
         echo "<dev id=\"display_element\" name='".$row[0]."' onclick=\"show_content(this.attributes['name'].value)\">Shipment ".$row[0]."</dev>";
       }

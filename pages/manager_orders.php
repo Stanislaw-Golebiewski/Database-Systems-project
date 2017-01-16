@@ -56,6 +56,7 @@ session_start();
   <div id="main_box">
     <ul>
       <li><a href="manager_packers.php">Packers</a></li>
+      <li><a href="manager_drivers.php">Drivers</a></li>
       <li><a href="manager_shipments.php">Shipments</a></li>
       <li><a href="manager_products.php">Products</a></li>
       <li><a class="active" href="manager_orders.php">Orders</a></li>

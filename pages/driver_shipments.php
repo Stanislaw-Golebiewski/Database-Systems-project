@@ -15,7 +15,20 @@ session_start();
 <head>
   <title>DuczBase</title>
   <link rel="stylesheet" type="text/css" href="style_main.css">
-  <script src="../js/driver_shipments_scripts.js"></script> 
+  <script src="../js/driver_shipments_scripts.js"></script>
+  <script>
+    window.onload = function() {
+        var x = document.getElementById("left_box");
+        if(x.childNodes.length == 1)
+        {
+          //show_empty();
+        }
+        else
+        { 
+          show_destination(x.childNodes[1].attributes[1].value);
+        }
+    };
+  </script>
 </head>
 <body>
 
@@ -53,6 +66,13 @@ session_start();
                 and d.employee_id =".$_SESSION["user_id"]." 
                 and s.status = 'ON THE WAY';";
       $rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");
+      if (pg_num_rows($rs) == 0)
+      {
+          echo "<dev id=\"display_element\">-</dev>
+                <script>
+                  show_empty();
+                </script>";
+      }
       while ($row = pg_fetch_row($rs)) {
         echo "<dev id=\"display_element\" name='".$row[0]."' onclick=\"show_destination(this.attributes['name'].value)\">Shipment ".$row[0]."</dev>";
       }

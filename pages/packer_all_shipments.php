@@ -60,6 +60,10 @@ session_start();
                     and p.employee_id = ".$_SESSION["user_id"]."
                     and s.status = 'PENDING APPROVAL'";
           $rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");
+          if (pg_num_rows($rs) == 0)
+          {
+            echo "<tr><td>-</td><td>-</td><td>-</td></tr>";
+          }
           while ($row = pg_fetch_row($rs)) {
             echo "<tr><td>".$row[0]."</td><td>
             <button id=\"button".$row[0]."\" class=\"show_button\">Show</button>
