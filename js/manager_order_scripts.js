@@ -47,7 +47,7 @@ function createShipment(order_id)
         return; 
     }
 
-    alert("Numbers are ok, create shipment");
+    //alert("Numbers are ok, create shipment");
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {

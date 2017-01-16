@@ -19,12 +19,15 @@
               </tr>";
 
 	include("db_connect.php");
-	$query = "select e.employee_id, e.phone, e.name, pc.count
+	$query = "select e.employee_id, e.name, e.phone, pc.count
             from employee e, warehouse w, manager m, packer p, 
-              (select p.employee_id, count(pl.packer_id)
-               from packer p
-               left join packing_line pl
-               on p.employee_id = pl.packer_id
+              (select p.employee_id, count(c.status)
+               from packer p 
+               left join (select pl.packer_id, s.status
+                          from packing_line pl, shipment s
+                          where s.shipment_id = pl.shipment_id
+                          and s.status = 'COMPLETING') as c
+               on p.employee_id = c.packer_id
                group by p.employee_id) as pc
             where p.employee_id = e.employee_id
             and p.warehouse_id = w.warehouse_id

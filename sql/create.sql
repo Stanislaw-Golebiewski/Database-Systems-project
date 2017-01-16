@@ -57,7 +57,7 @@ CREATE TABLE account(
 employee_id INTEGER NOT NULL,
 login VARCHAR(20),
 password VARCHAR(20),
-permission VARCHAR(10) CHECK(permission IN ('MANAGER','PACKER','DRIVER')),
+permission VARCHAR(10) CHECK(permission IN ('MANAGER','PACKER','DRIVER','NONE')),
 PRIMARY KEY (employee_id,login),
 FOREIGN KEY(employee_id) REFERENCES employee(employee_id) ON DELETE CASCADE);
 

@@ -18,6 +18,7 @@
             and po.product_id = p.product_id
             and p.product_id = a.product_id
             and a.warehouse_id = w.warehouse_id
+            and po.quantity > 0
             and w.warehouse_id = ".$_SESSION["warehouse_id"]."
             and o.order_id = ".$order_id;
     $rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");

@@ -18,6 +18,20 @@ session_start();
   <link rel="stylesheet" type="text/css" href="style_main.css">
   <script src="../js/manager_order_scripts.js"></script> 
   <!--                      -->
+  <script>
+    window.onload = function() {
+        var x = document.getElementById("left_box");
+        if(x.childNodes.length == 1)
+        {
+          //what if there is no shipments?
+        }
+        else
+        { 
+           show_content(x.childNodes[1]);
+        }
+    };
+
+  </script>
 </head>
 <body>
 
@@ -50,7 +64,7 @@ session_start();
     <div id="left_box">
       <?php 
       include("../php/db_connect.php");
-      $query = "select o.order_id from orders o";
+      $query = "select o.order_id as quantity from orders o, product_order po where po.order_id = o.order_id group by o.order_id having SUM(po.quantity) > 0";
       $rs = pg_query($connection, $query) or die("Cannot execute query: $query\n");
       while ($row = pg_fetch_row($rs)) {
         echo "<dev id=\"display_element\" name='".$row[0]."' onclick=\"show_content(this)\">Order ".$row[0]."</dev>";
