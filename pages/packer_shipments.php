@@ -20,6 +20,7 @@ session_start();
         var x = document.getElementById("left_box");
         if(x.childNodes.length == 1)
         {
+          var y = document.getElementById("right_box").innerHTML = "<h3>KOT";
           //what if there is no shipments?
         }
         else
