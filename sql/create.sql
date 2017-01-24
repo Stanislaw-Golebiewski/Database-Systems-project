@@ -50,7 +50,7 @@ FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE);
 
 CREATE TABLE employee(
 employee_id INTEGER PRIMARY KEY NOT NULL,
-phone VARCHAR(12),
+phone VARCHAR(15),
 name VARCHAR(30));
 
 CREATE TABLE account(
