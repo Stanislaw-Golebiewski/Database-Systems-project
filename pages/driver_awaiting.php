@@ -81,18 +81,6 @@ session_start();
     </div>
 
     <div id="right_box">
-      <!--<h2>WAREHOUSE 1</h2>
-      <table class="small_table">
-        <tr>
-          <td>Shipment 1</td>
-          <td><button>Collected</button></td>
-        </tr>
-        <tr>
-          <td>Shipment 2</td>
-          <td><button>Collected</button></td>
-        </tr>
-
-      </table>/-->
     </div>
 
   </div>

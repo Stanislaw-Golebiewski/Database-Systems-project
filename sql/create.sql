@@ -107,4 +107,29 @@ PRIMARY KEY(shipment_id, product_id),
 FOREIGN KEY(shipment_id) REFERENCES shipment(shipment_id) ON DELETE CASCADE,
 FOREIGN KEY(product_id) REFERENCES product(product_id) ON DELETE CASCADE);
 
+/*postgres only */
+create or replace function update_driver()
+returns trigger as $update_driver$
+DECLARE
+	id integer not null := (select d.employee_id from(
+			select d.employee_id, count(aw_shipment.shipment_id) as count
+			from driver d
+			left join (select driver_id as id, shipment_id from shipment where status = 'ON THE WAY' or status = 'AWAITING') as aw_shipment
+			on aw_shipment.id = d.employee_id
+			group by d.employee_id 
+			order by count asc
+			limit 1) as d);
+BEGIN
+	IF new.status = 'AWAITING' THEN
+	   update shipment
+	   set driver_id = id
+	   where shipment_id = new.shipment_id;
+	END IF;
+	RETURN NEW;
+END;
 
+$update_driver$ language plpgsql;
+
+create trigger driver_to_shipment
+after update of status on shipment
+for each row execute procedure update_driver();

@@ -204,8 +204,9 @@ INSERT INTO packer (employee_id, warehouse_id)
 
 INSERT INTO packer (employee_id, warehouse_id)
   VALUES (8, 2);
-  
+
 /*SHIPMENTS*/
+/*
 INSERT INTO shipment (shipment_id, driver_id, warehouse_id, order_id, status)
   VALUES (1, 3, 1, 1, 'PENDING APPROVAL');
 
@@ -229,8 +230,9 @@ INSERT INTO shipment (shipment_id, driver_id, warehouse_id, order_id, status)
 
 INSERT INTO shipment (shipment_id, driver_id, warehouse_id, order_id, status)
   VALUES (8, 3, 2, 7, 'AWAITING');
-
+*/
 /*PACKING LINES*/
+/*
 INSERT INTO packing_line (packer_id, shipment_id)
   VALUES (5, 1);
 
@@ -249,16 +251,13 @@ INSERT INTO packing_line (packer_id, shipment_id)
 INSERT INTO packing_line (packer_id, shipment_id)
   VALUES (7, 4);
 
-/*INSERT INTO packing_line (packer_id, shipment_id)
-  VALUES (8, 5);*/
-
 INSERT INTO packing_line (packer_id, shipment_id)
   VALUES (7, 5);
+*/
 
-/*INSERT INTO packing_line (packer_id, shipment_id)
-  VALUES (8, 6);*/
 
 /*PRODUCT_SHIPMENT*/
+/*
 INSERT INTO product_shipment (shipment_id, product_id, quantity)
   VALUES (1, 1, 21);
 
@@ -288,3 +287,4 @@ INSERT INTO product_shipment (shipment_id, product_id, quantity)
 
 INSERT INTO product_shipment (shipment_id, product_id, quantity)
 VALUES (7, 5, 1);
+*/
