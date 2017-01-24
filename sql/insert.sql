@@ -28,6 +28,13 @@ INSERT INTO product (product_id, name, category)
 INSERT INTO product (product_id, name, category)
   VALUES (5, 'Lemon sprinkler', 'Kitchen utensils');
 
+INSERT INTO product (product_id, name, category)
+VALUES (6, 'Coconut', 'Fruits');
+INSERT INTO product (product_id, name, category)
+VALUES (7, 'Hazelnut', 'Fruits');
+INSERT INTO product (product_id, name, category)
+VALUES (8, 'Lemon', 'Fruits');
+
 
 /*ORDERS*/
 INSERT INTO orders (order_id, customer_id, date, price)
@@ -51,13 +58,43 @@ INSERT INTO orders (order_id, customer_id, date, price)
 INSERT INTO orders (order_id, customer_id, date, price)
   VALUES (7, 2, '2011-09-05', 9.00);
 
+INSERT INTO orders (order_id, customer_id, date, price)
+  VALUES (8, 3, '2011-09-05', 9.00);
+
 
 /*PRODUCTS_ORDERS*/
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (8, 1, 200);
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (8, 2, 200);
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (8, 3, 200);
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (8, 4, 200);
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (8, 5, 200);
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (8, 6, 200);
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (8, 7, 200);
+
 INSERT INTO product_order (order_id, product_id, quantity)
   VALUES (1, 1, 21);
 
 INSERT INTO product_order (order_id, product_id, quantity)
   VALUES (1, 5, 10);
+
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (1, 6, 20);
+
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (1, 7, 20);
+
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (1, 8, 3);
+
+INSERT INTO product_order (order_id, product_id, quantity)
+  VALUES (2, 2, 15);
 
 INSERT INTO product_order (order_id, product_id, quantity)
   VALUES (2, 3, 6);
@@ -82,6 +119,9 @@ INSERT INTO product_order (order_id, product_id, quantity)
 
 INSERT INTO product_order (order_id, product_id, quantity)
   VALUES (7, 1, 11);
+
+INSERT INTO product_order (order_id, product_id, quantity)
+VALUES (7, 6, 2000);
 
 
 /*EMPLOYEES*/
@@ -174,6 +214,24 @@ INSERT INTO availability (warehouse_id, product_id, location, quantity)
 
 INSERT INTO availability (warehouse_id, product_id, location, quantity)
   VALUES (2, 5, 'PUF51', 1835);
+
+INSERT INTO availability (warehouse_id, product_id, location, quantity)
+  VALUES (1, 6, 'OWU01', 50);
+
+INSERT INTO availability (warehouse_id, product_id, location, quantity)
+  VALUES (2, 6, 'OWU01', 100);
+
+INSERT INTO availability (warehouse_id, product_id, location, quantity)
+  VALUES (1, 7, 'OWU07', 25);
+
+INSERT INTO availability (warehouse_id, product_id, location, quantity)
+  VALUES (2, 7, 'OWU07', 1000);
+
+INSERT INTO availability (warehouse_id, product_id, location, quantity)
+  VALUES (1, 8, 'OWX23', 12);
+
+INSERT INTO availability (warehouse_id, product_id, location, quantity)
+  VALUES (2, 8, 'OWX37', 132);
 
 
 /*MANAGERS*/

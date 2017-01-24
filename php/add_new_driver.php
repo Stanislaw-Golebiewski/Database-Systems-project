@@ -46,7 +46,7 @@ if (isset($_POST['add_driver'])) {
                     VALUES ($id, '$phone', '$name')";
 
       $add_account_query = "INSERT INTO account (employee_id, login, password, permission)
-                            VALUES ($id, '$login', '$password', 'PACKER')";
+                            VALUES ($id, '$login', '$password', 'DRIVER')";
 
       $add_driver_query = "INSERT INTO driver (employee_id, car_id)
                             VALUES ($id, $car)";
